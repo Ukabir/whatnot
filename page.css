@@ -448,7 +448,7 @@ body {
         position: absolute;
     }
 }
-@media (max-width: 370px) {
+@media (max-width: 470px) {
     .top-img {
         width: 80px;
         height: 40px;

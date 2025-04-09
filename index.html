@@ -245,4 +245,29 @@
             }
         }
     }
+    let touchStartY = 0;
+    let touchEndY = 0;
+
+    window.addEventListener("touchstart", (e) => {
+    touchStartY = e.changedTouches[0].screenY;
+    });
+
+    window.addEventListener("touchend", (e) => {
+    touchEndY = e.changedTouches[0].screenY;
+    handleGesture();
+    });
+
+    function handleGesture() {
+    if (isScrolling) return;
+
+    if (touchStartY - touchEndY > 50 && currentIndex < pages.length - 1) {
+        // Swipe up
+        currentIndex++;
+        scrollToPage(currentIndex);
+    } else if (touchEndY - touchStartY > 50 && currentIndex > 0) {
+        // Swipe down
+        currentIndex--;
+        scrollToPage(currentIndex);
+    }
+    }
 </script>
