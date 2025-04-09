@@ -448,7 +448,7 @@ body {
         position: absolute;
     }
 }
-@media (max-width: 470px) {
+@media only screen and (orientation: portrait){
     .top-img {
         width: 80px;
         height: 40px;
